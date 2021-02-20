@@ -1,0 +1,22 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+dubbo:
+  application:
+    name: nethp-user
+  protocol:
+    name: dubbo
+    port: 20880
+  registry:
+    address: nacos://${nacos.config.server-addr}
+    parameters:
+      namespace: 01e6026c-2c92-4fed-a9c8-6f2861d93f63
+
+nacos:
+  config:
+    server-addr: 10.0.108.37:8848
+    type: yaml
+    data-id: nethp-user-dev
+    namespace: 01e6026c-2c92-4fed-a9c8-6f2861d93f63
+    group: USER
